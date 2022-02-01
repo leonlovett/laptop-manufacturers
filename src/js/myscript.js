@@ -9,18 +9,17 @@ async function getRemoteData() {
     data = await (await fetch(dataUrl)).json();
     const tBody = document.querySelector('tbody');
     data.forEach(item => {
-        const row = createRow(item);
         const row = document.createElement('tr');
         const id = document.createElement('td');
-        id.innerText = rowData.id;
+        id.innerText = item.id;
         const name = document.createElement('td');
-        name.innerText = rowData.manufacturerName;
+        name.innerText = item.manufacturerName;
         const ceo = document.createElement('td');
-        ceo.innerText = rowData.nameOfCEO;
+        ceo.innerText = item.nameOfCEO;
         const headquarters = document.createElement('td');
-        headquarters.innerText = rowData.headquarters;
+        headquarters.innerText = item.headquarters;
         const modifiedOn = document.createElement('td');
-        modifiedOn.innerText = rowData.modifiedOn;
+        modifiedOn.innerText = item.modifiedOn;
         row.appendChild(id);
         row.appendChild(name);
         row.appendChild(ceo);
